@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Meow+Script&family=Raleway:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Meow Script", cursive;
+  --font-body: "Raleway", sans-serif;
+
+  --color-background: #0A0A0F;
+  --color-foreground: #F8FAFC;
+  
+  --color-gold: var(--accent-color, #C9A84C);
+  --color-silver: #C0C0C0;
+  --color-rose: var(--secondary-color, #DB2777);
+  
+  --color-card: #12121A;
+  --color-card-foreground: #F8FAFC;
+  
+  --color-primary: var(--accent-color, #C9A84C);
+  --color-primary-foreground: #0A0A0F;
+  
+  --color-secondary: var(--secondary-color, #DB2777);
+  --color-secondary-foreground: #F8FAFC;
+  
+  --color-muted: #1E1E2D;
+  --color-muted-foreground: #94A3B8;
+  
+  --color-accent: #C9A84C;
+  --color-accent-foreground: #0A0A0F;
+  
+  --color-border: #1E1E2D;
+  --color-input: #1E1E2D;
+  --color-ring: #C9A84C;
+
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-rose);
+  }
+}
+
+.starry-bg {
+  background: radial-gradient(circle at 50% 50%, #12121A 0%, #0A0A0F 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: twinkle var(--duration) infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.glass {
+  background: rgba(18, 18, 26, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.gold-glow {
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
+}
+
+.rose-glow {
+  box-shadow: 0 0 20px rgba(219, 39, 119, 0.2);
+}
